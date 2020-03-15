@@ -1,0 +1,116 @@
+#user post
+POST http://localhost:8080/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "test3",
+  "password": "password"
+}
+
+###
+POST http://localhost:8080/users/groups
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic filosss password
+
+{
+  "name": "group6",
+  "description": "description"
+}
+
+###
+#in what groups I am
+GET http://localhost:8080/users/groups
+Accept: application/json
+Authorization: Basic filosss password
+
+###
+#what is in that groups
+GET http://localhost:8080/users/groups/5e64d69b86d1be1ce8ce6af6
+Accept: application/json
+Authorization: Basic filosss password
+
+###
+PATCH http://localhost:8080/users/groups/5e64d69b86d1be1ce8ce6af6
+Content-Type: application/json
+Authorization: Basic filosss password
+
+{
+  "description": "another description"
+}
+
+###
+
+DELETE http://localhost:8080/users/groups/5e6a115e1bf32b270494f4ea
+Accept: application/json
+Authorization: Basic filosss password
+
+###
+PUT  http://localhost:8080/users/groups/5e6a11fc9c3609093c9d0d29
+Content-Type: application/json
+Authorization: Basic filosss password
+
+{
+  "name": "group2 new",
+  "description": "another new"
+}
+
+###
+POST http://localhost:8080/users/groups/5e6a11fc9c3609093c9d0d29/members
+Content-Type: application/json
+Authorization: Basic filosss password
+
+{
+  "members": [
+    "filosss2",
+    "filo2",
+    "filo3"
+  ]
+}
+
+###
+
+POST http://localhost:8080/users/groups/5e6a11fc9c3609093c9d0d29/notes
+Content-Type: application/json
+Authorization: Basic test3 password
+
+{
+  "name": "name1225",
+  "notes": [
+    "dasdasdad2s",
+    "dasdasd"
+  ]
+}
+
+###
+GET http://localhost:8080/users/groups/5e6a11fc9c3609093c9d0d29/notes
+Accept: application/json
+Authorization: Basic test3 password
+
+
+###
+GET http://localhost:8080/users/groups/5e6a11fc9c3609093c9d0d29/notes/5e6a8f472d29f43150f44a98
+Accept: application/json/
+Authorization: Basic filosss password
+
+
+###
+
+PUT  http://localhost:8080/users/groups/5e6a11fc9c3609093c9d0d29/notes/5e6a8f472d29f43150f44a98
+Content-Type: application/json
+Authorization: Basic filo2 password
+
+{
+  "name": "en s2",
+  "notes": [
+    "ana are merdsdse,"
+  ]
+}
+
+###
+DELETE http://localhost:8080/users/groups/5e6a11fc9c3609093c9d0d29/notes/5e6aa18fa27d453510d072b8
+Accept:  application/json
+Authorization: Basic filosss password
+
+###
